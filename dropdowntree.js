@@ -17,7 +17,7 @@ $('.dropdown-tree').each(function(){
 
 
     //data inits from options
-    $(this).init.prototype.HellowWorld = function(options){
+    $(this).init.prototype.DropDownTree = function(options){
     	if(typeof options != "undefined" && options!=null){
     		if(typeof options.title != "undefined" && options.title != null){
     			$(this).init.prototype.title = options.title;
