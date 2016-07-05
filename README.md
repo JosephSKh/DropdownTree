@@ -26,7 +26,7 @@ Call:
 	    },
     }
 
-    $("#firstDropDownTree").HellowWorld(options);
+    $("#firstDropDownTree").DropDownTree(options);
     
 #Options Description:
 
