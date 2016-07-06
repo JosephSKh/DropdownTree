@@ -1,8 +1,6 @@
 #***STILL UNDER CONSTRUCTION***
 # DropdownTree
-Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquerywidth click handlers, data handlers. With single and multi item select and ajax request for getting data
-
-#### [DEMO](https://josephskh.github.io/)
+Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquery with click handlers, data handlers. With single and multi item select and ajax request for getting data
 
 ![Dropdown Tree Screenshot](http://i.imgur.com/xWIEmyz.png)
 
@@ -48,6 +46,7 @@ Call:
 - `dataAttrs` an array of object which will add data attributes for each `li` element
 - `data` is an another arraay of sub elements with the same attributes
 - `href` is the HREF of the `a` element inside the `li` current element
+- `multiSelect` adds checkboxes and allows multi selection for multi elements in the dropdown
 
 
 #DataAttrs Description:
@@ -58,6 +57,8 @@ DataAttrs is an array of objects
 
 #Functions:
 - `GetParents()` returns an `array` of the full tree of the clicked element down to up
+- `SetTitle(title)` sets the title of the dropdown button
+- `GetSelected()` if multiselect is `true`, will return an array of the selected elements
 
 
 #CDNs:

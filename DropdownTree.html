@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <title>
 Dropdown Tree
 </title>
@@ -70,11 +73,14 @@ var options = {
 	clickHandler: function(element){
 		//gets clicked element parents
 		console.log($("#firstDropDownTree").GetParents());
-		//element is the clicked element		
+		//element is the clicked element
 		console.log(element);
+		$("#firstDropDownTree").SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$("#firstDropDownTree").GetSelected());
 	},
 	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
 	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	multiSelect: true,
 }
 
 $("#firstDropDownTree").DropDownTree(options);

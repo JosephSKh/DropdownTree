@@ -11,7 +11,7 @@ $('.dropdown-tree').each(function(){
                 }
             }
             if(!element.is("li")){
-                element.append('<li id="TreeElement'+$(this).globalIdCounter+'"'+dataAttrs+'><a href="'+((typeof data[i].href != "undefined" && data[i].href!=null)?data[i].href:'#')+'">'+data[i].title+'</a></li>');
+                element.append('<li id="TreeElement'+$(this).globalIdCounter+'"'+dataAttrs+'>'+($(this).multiSelect?'<i class="fa fa-square-o select-box" aria-hidden="true"></i>':'')+'<a href="'+((typeof data[i].href != "undefined" && data[i].href!=null)?data[i].href:'#')+'">'+data[i].title+'</a></li>');
                 if(data[i].data != null && typeof data[i].data !="undefined"){
                     $("#TreeElement"+$(this).globalIdCounter).append("<ul style='display:none'></ul>");
                     $("#TreeElement"+$(this).globalIdCounter).find("a").first().prepend($(this).closedArrow);
@@ -19,7 +19,7 @@ $('.dropdown-tree').each(function(){
                  }
             }
             else{
-                element.find("ul").append('<li id="TreeElement'+$(this).globalIdCounter+'"'+dataAttrs+'><a href="'+((typeof data[i].href != "undefined" && data[i].href!=null)?data[i].href:'#')+'">'+data[i].title+'</a></li>');
+                element.find("ul").append('<li id="TreeElement'+$(this).globalIdCounter+'"'+dataAttrs+'>'+($(this).multiSelect?'<i class="fa fa-square-o select-box" aria-hidden="true"></i>':'')+'<a href="'+((typeof data[i].href != "undefined" && data[i].href!=null)?data[i].href:'#')+'">'+data[i].title+'</a></li>');
                 if(data[i].data != null && typeof data[i].data !="undefined"){
                     $("#TreeElement"+$(this).globalIdCounter).append("<ul style='display:none'></ul>");
                     $("#TreeElement"+$(this).globalIdCounter).find("a").first().prepend($(this).closedArrow);
@@ -35,9 +35,10 @@ $('.dropdown-tree').each(function(){
     $(this).init.prototype.data = [];
     $(this).init.prototype.closedArrow = '<i class="fa fa-caret-right arrow" aria-hidden="true"></i>';
     $(this).init.prototype.openedArrow = '<i class="fa fa-caret-down arrow" aria-hidden="true"></i>';
-
-
     $(this).init.prototype.maxHeight = 300;
+    $(this).init.prototype.multiSelect = false;
+
+
     $(this).init.prototype.clickedElement = null;
     $(this).init.prototype.clickHandler = function(target){
     	
@@ -53,7 +54,7 @@ $('.dropdown-tree').each(function(){
         e.stopPropagation();
     });
 
-//arrow click handler close/open
+    //arrow click handler close/open
     $(this).on("click",".arrow",function(e){
         e.stopPropagation();
         if($(this).parents("li").first().find("ul").first().is(":visible")){
@@ -66,6 +67,19 @@ $('.dropdown-tree').each(function(){
         $(this).remove();
     });
 
+
+    //select box click handler
+    $(this).on("click",".select-box",function(e){
+        tree.init.prototype.clickedElement = this;
+        e.stopPropagation();
+        if($(this).hasClass("fa-square-o")){
+            $(this).removeClass("fa-square-o");
+            $(this).addClass("fa-check-square-o");
+        }else{
+            $(this).addClass("fa-square-o");
+            $(this).removeClass("fa-check-square-o");
+        }
+    });
 
     //data inits from options
     $(this).init.prototype.DropDownTree = function(options){
@@ -88,8 +102,11 @@ $('.dropdown-tree').each(function(){
             if(typeof options.openedArrow != "undefined" && options.openedArrow != null){
                  $(this).init.prototype.openedArrow="<i class='arrow'>"+options.openedArrow+"</i>";
             }
+            if(typeof options.multiSelect != "undefined" && options.multiSelect != null){
+                 $(this).init.prototype.multiSelect=options.multiSelect;
+            }
     	}
-        $(this).append('<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">'+$(this).title+'<span class="caret"></span></button>');
+        $(this).append('<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="dropdowntree-name">'+$(this).title+'</span><span class="caret"></span></button>');
         $(this).append('<ul style="max-height: '+$(this).maxHeight+'px" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>');
 
         RenderData($(this).data,$(this).find("ul").first());
@@ -100,6 +117,19 @@ $('.dropdown-tree').each(function(){
 $(this).init.prototype.GetParents = function(){
     var jqueryClickedElement = $(this).clickedElement;
     return $(jqueryClickedElement).parents("li");
-}
+};
+
+$(this).init.prototype.SetTitle = function(title){
+    $(this).find(".dropdowntree-name").text(title);
+};
+
+$(this).init.prototype.GetSelected = function(title){
+    var selectedElements = [];
+    $(this).find(".fa-check-square-o").each(function(){
+        selectedElements.push($(this).parents("li").first());
+    });
+    return selectedElements;
+};
+
 
 });
