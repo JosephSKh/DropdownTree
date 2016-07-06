@@ -36,11 +36,17 @@ Call:
 
 `clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
 
+`maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
+
 
 #Arr Description:
 `title` is the text of the element
 
 `dataAttrs` an array of object which will add data attributes for each `li` element
+
+`data` is an another arraay of sub elements with the same attributes
+
+`href` is the HREF of the `a` element inside the `li` current element
 
 
 #DataAttrs Description:

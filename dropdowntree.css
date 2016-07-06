@@ -1,0 +1,7 @@
+.dropdown-tree ul{overflow-y: auto}
+.dropdown-tree li{list-style: none}
+.dropdown-tree li:hover{ background: #eee;}
+.dropdown-tree li:hover ul { background: white; }
+.dropdown-tree li:hover ul li:hover { background: #eee; } 
+.dropdown-tree a{background:transparent !important;}
+.dropdown-tree a{display: block;padding: 3px 20px;clear: both;font-weight: 400;line-height: 1.42857143;color: #333;white-space: nowrap;text-decoration: none}
