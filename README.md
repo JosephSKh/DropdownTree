@@ -41,6 +41,7 @@ Call:
 - `maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
 - `closedArrow` if a `li` has a sub menu this will be the icon of the closed arrow when closed .. defaults to font awesome `<i class="fa fa-caret-right" aria-hidden="true"></i>`
 - `openedArrow` if a `li` has a sub menu this will be the icon of the opened arrow when opened .. defaults `<i class="fa fa-caret-down" aria-hidden="true"></i>`
+- `multiSelect` `bool` adds checkboxes and allows multi selection for multi elements in the dropdown
 
 
 #Arr Description:
@@ -48,7 +49,6 @@ Call:
 - `dataAttrs` an array of object which will add data attributes for each `li` element
 - `data` is an another arraay of sub elements with the same attributes
 - `href` is the HREF of the `a` element inside the `li` current element
-- `multiSelect` adds checkboxes and allows multi selection for multi elements in the dropdown
 
 
 #DataAttrs Description:
