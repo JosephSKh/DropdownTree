@@ -3,5 +3,5 @@
 .dropdown-tree li:hover{ background: #eee;}
 .dropdown-tree li:hover ul { background: white; }
 .dropdown-tree li:hover ul li:hover { background: #eee; } 
-.dropdown-tree a{background:transparent !important;}
-.dropdown-tree a{display: block;padding: 3px 20px;clear: both;font-weight: 400;line-height: 1.42857143;color: #333;white-space: nowrap;text-decoration: none}
+.dropdown-tree a{display: block;padding: 3px 20px;clear: both;font-weight: 400;line-height: 1.42857143;color: #333;white-space: nowrap;text-decoration: none;background:transparent !important; position: relative;}
+.dropdown-tree .arrow{position: absolute;margin-left: -15px;top: 50%; transform: translateY(-50%);}

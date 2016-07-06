@@ -3,6 +3,7 @@
 Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquerywidth click handlers, data handlers. With single and multi item select and ajax request for getting data
 
 # Getting Started:
+##### Include JQuery, Bootstrap and FontAwesome
 Download the `dropdowntree.js` and `dropdowntree.css`
 ##### please refer to `DropdownTree.html` for full example
 create a div with the class `dropdown-tree`
@@ -20,11 +21,11 @@ Call:
     ];
     
     var options = {
-	    title : "DropDown Tree",
-	    data: arr,
-	    clickHandler: function(element){
-		    console.log(element);
-	    },
+        title : "DropDown Tree",
+        data: arr,
+        clickHandler: function(element){
+            console.log(element);
+        },
     }
 
     $("#firstDropDownTree").DropDownTree(options);
@@ -34,6 +35,8 @@ Call:
 - `data` is the array of values will be passed to the `ul li`
 - `clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
 - `maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
+- `closedArrow` if a `li` has a sub menu this will be the icon of the closed arrow when closed .. defaults to font awesome `<i class="fa fa-caret-right" aria-hidden="true"></i>`
+- `openedArrow` if a `li` has a sub menu this will be the icon of the opened arrow when opened .. defaults `<i class="fa fa-caret-down" aria-hidden="true"></i>`
 
 
 #Arr Description:
@@ -47,3 +50,21 @@ Call:
 DataAttrs is an array of objects
 - `title` is the title of the data attribute .. if it's "xx" ,, then the data attribute will be `data-xx`
 - `data` is the data attribute value
+
+
+#Functions:
+- `GetParents()` returns and `array` of the full tree down to up
+
+
+#CDNs:
+##CSS:
+###Bootstrap:
+    `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">`
+###FontAwesome:
+`<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">`
+
+##JS:
+###JQuery:
+`<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>`
+###Bootstrap
+`<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>`
