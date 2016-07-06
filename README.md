@@ -53,7 +53,7 @@ DataAttrs is an array of objects
 
 
 #Functions:
-- `GetParents()` returns and `array` of the full tree down to up
+- `GetParents()` returns an `array` of the full tree of the clicked element down to up
 
 
 #CDNs:
