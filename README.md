@@ -3,7 +3,8 @@
 Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquerywidth click handlers, data handlers. With single and multi item select and ajax request for getting data
 
 # Getting Started:
-Download the `dropdowntree.js`
+Download the `dropdowntree.js` and `dropdowntree.css`
+##### please refer to `DropdownTree.html` for full example
 create a div with the class `dropdown-tree`
 
 ex:
@@ -29,29 +30,20 @@ Call:
     $("#firstDropDownTree").DropDownTree(options);
     
 #Options Description:
-
-`title` is the text of the dropdown
-
-`data` is the array of values will be passed to the `ul li`
-
-`clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
-
-`maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
+- `title` is the text of the dropdown
+- `data` is the array of values will be passed to the `ul li`
+- `clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
+- `maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
 
 
 #Arr Description:
-`title` is the text of the element
-
-`dataAttrs` an array of object which will add data attributes for each `li` element
-
-`data` is an another arraay of sub elements with the same attributes
-
-`href` is the HREF of the `a` element inside the `li` current element
+- `title` is the text of the element
+- `dataAttrs` an array of object which will add data attributes for each `li` element
+- `data` is an another arraay of sub elements with the same attributes
+- `href` is the HREF of the `a` element inside the `li` current element
 
 
 #DataAttrs Description:
 DataAttrs is an array of objects
-
-`title` is the title of the data attribute .. if it's "xx" ,, then the data attribute will be `data-xx`
-
-`data` is the data attribute value
+- `title` is the title of the data attribute .. if it's "xx" ,, then the data attribute will be `data-xx`
+- `data` is the data attribute value
