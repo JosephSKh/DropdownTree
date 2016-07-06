@@ -4,7 +4,7 @@ Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquerywidth clic
 
 #### [DEMO](https://josephskh.github.io/)
 
-![Dropdown Tree Screenshot](http://i.imgur.com/xWIEmyz.png){:target="_blank"}
+![Dropdown Tree Screenshot](http://i.imgur.com/xWIEmyz.png)
 
 # Getting Started:
 ##### Include JQuery, Bootstrap and FontAwesome
