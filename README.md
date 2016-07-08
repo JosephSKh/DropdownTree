@@ -34,7 +34,7 @@ Call:
 
     $("#firstDropDownTree").DropDownTree(options);
     
-#Options Description:
+##Options Description:
 - `title` is the text of the dropdown
 - `data` is the array of values will be passed to the `ul li`
 - `clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
@@ -44,20 +44,20 @@ Call:
 - `multiSelect` `bool` adds checkboxes and allows multi selection for multi elements in the dropdown
 
 
-#Arr Description:
+##Arr Description:
 - `title` is the text of the element
 - `dataAttrs` an array of object which will add data attributes for each `li` element
 - `data` is an another arraay of sub elements with the same attributes
 - `href` is the HREF of the `a` element inside the `li` current element
 
 
-#DataAttrs Description:
+##DataAttrs Description:
 DataAttrs is an array of objects
 - `title` is the title of the data attribute .. if it's "xx" ,, then the data attribute will be `data-xx`
 - `data` is the data attribute value
 
 
-#Functions:
+##Functions:
 - `GetParents()` returns an `array` of the full tree of the clicked element down to up
 - `SetTitle(title)` sets the title of the dropdown button
 - `GetSelected()` if multiselect is `true`, will return an array of the selected elements

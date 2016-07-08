@@ -16,10 +16,8 @@ Dropdown Tree
 </head>
 <body>
 
-<div class="dropdown dropdown-tree" id="firstDropDownTree">
-
-
-</div>
+<div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
+<div class="dropdown dropdown-tree" id="firstDropDownTree2"></div>
 
 
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -72,11 +70,11 @@ var options = {
 	maxHeight: 300,
 	clickHandler: function(element){
 		//gets clicked element parents
-		console.log($("#firstDropDownTree").GetParents());
+		console.log($(this).GetParents());
 		//element is the clicked element
 		console.log(element);
-		$("#firstDropDownTree").SetTitle($(element).find("a").first().text());
-		console.log("Selected Elements",$("#firstDropDownTree").GetSelected());
+		$(this).SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$(this).GetSelected());
 	},
 	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
 	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
@@ -84,6 +82,30 @@ var options = {
 }
 
 $("#firstDropDownTree").DropDownTree(options);
+
+
+
+
+var options2 = {
+	title : "DropDown Tree 2",
+	data: arr3,
+	maxHeight: 3000,
+	clickHandler: function(element){
+		//gets clicked element parents
+		console.log($(this).GetParents());
+		//element is the clicked element
+		console.log(element);
+		$(this).SetTitle($(element).find("a").	first().text());
+		console.log("Selected Elements",$(this).GetSelected());
+	},
+	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+}
+
+
+$("#firstDropDownTree2").DropDownTree(options2);
+
+console.log($(".dropdown-tree"));
 
 </script>
 

@@ -113,23 +113,24 @@ $('.dropdown-tree').each(function(){
     };
 
 
-//protos inits
-$(this).init.prototype.GetParents = function(){
-    var jqueryClickedElement = $(this).clickedElement;
-    return $(jqueryClickedElement).parents("li");
-};
+    //protos inits
+    $(this).init.prototype.GetParents = function(){
+        var jqueryClickedElement = $(this).clickedElement;
+        return $(jqueryClickedElement).parents("li");
+    };
 
-$(this).init.prototype.SetTitle = function(title){
-    $(this).find(".dropdowntree-name").text(title);
-};
+    $(this).init.prototype.SetTitle = function(title){
+        console.log("caller",this);
+        $(this).find(".dropdowntree-name").text(title);
+    };
 
-$(this).init.prototype.GetSelected = function(title){
-    var selectedElements = [];
-    $(this).find(".fa-check-square-o").each(function(){
-        selectedElements.push($(this).parents("li").first());
-    });
-    return selectedElements;
-};
+    $(this).init.prototype.GetSelected = function(title){
+        var selectedElements = [];
+        $(this).find(".fa-check-square-o").each(function(){
+            selectedElements.push($(this).parents("li").first());
+        });
+        return selectedElements;
+    };
 
 
 });
