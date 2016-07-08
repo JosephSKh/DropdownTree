@@ -70,11 +70,11 @@ var options = {
 	maxHeight: 300,
 	clickHandler: function(element){
 		//gets clicked element parents
-		console.log($(this).GetParents());
+		console.log($(element).GetParents());
 		//element is the clicked element
 		console.log(element);
-		$(this).SetTitle($(element).find("a").first().text());
-		console.log("Selected Elements",$(this).GetSelected());
+		$("#firstDropDownTree").SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$("#firstDropDownTree").GetSelected());
 	},
 	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
 	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
@@ -91,21 +91,20 @@ var options2 = {
 	data: arr3,
 	maxHeight: 3000,
 	clickHandler: function(element){
-		//gets clicked element parents
-		console.log($(this).GetParents());
+				//gets clicked element parents
+		console.log($(element).GetParents());
 		//element is the clicked element
 		console.log(element);
-		$(this).SetTitle($(element).find("a").	first().text());
-		console.log("Selected Elements",$(this).GetSelected());
+		$("#firstDropDownTree2").SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$("#firstDropDownTree2").GetSelected());
 	},
 	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
 	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	multiSelect: true,
 }
 
 
 $("#firstDropDownTree2").DropDownTree(options2);
-
-console.log($(".dropdown-tree"));
 
 </script>
 
