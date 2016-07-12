@@ -76,9 +76,16 @@ var options = {
 		$("#firstDropDownTree").SetTitle($(element).find("a").first().text());
 		console.log("Selected Elements",$("#firstDropDownTree").GetSelected());
 	},
+	expandHandler: function(element,expanded){
+		console.log("expand",element,expanded);
+	},
+	checkHandler: function(element,checked){
+		console.log("check",element,checked);
+	},
 	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
 	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
 	multiSelect: true,
+	selectChildren: true,
 }
 
 $("#firstDropDownTree").DropDownTree(options);

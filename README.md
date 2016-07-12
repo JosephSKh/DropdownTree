@@ -37,11 +37,14 @@ Call:
 ##Options Description:
 - `title` is the text of the dropdown
 - `data` is the array of values will be passed to the `ul li`
-- `clickHandler` is a function which will be passed and handle an element click, pass a `target` variable and this will return the clicked element
+- `clickHandler` is a function which will be passed and handle an element click, pass a `element` variable and this will return the clicked element
+- `checkHandler` is a function which will be passed and handle an element check, pass a `element` variable and this will return the clicked element, the second parameter is a `bool` which will tell the checked status
+- `expandHandler` is a function which will be passed and handle an element expand, pass a `element` variable and this will return the clicked element, the second parameter is a `bool` which will tell the expand status
 - `maxHeight` is the maximum height of the dropdown `ul` .. if `undefined` or `null` will defult to `300`
 - `closedArrow` if a `li` has a sub menu this will be the icon of the closed arrow when closed .. defaults to font awesome `<i class="fa fa-caret-right" aria-hidden="true"></i>`
 - `openedArrow` if a `li` has a sub menu this will be the icon of the opened arrow when opened .. defaults `<i class="fa fa-caret-down" aria-hidden="true"></i>`
 - `multiSelect` `bool` adds checkboxes and allows multi selection for multi elements in the dropdown
+- `selectChildren` `bool` will check all children of the selected parent .. defaults to `false`
 
 
 ##Arr Description:
