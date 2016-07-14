@@ -135,5 +135,10 @@ var globalTreeIdCounter=0;
         return selectedElements;
     };
 
+    $(options.element).init.prototype.AddChildren = function(element, arrOfElements){
+        element = $(element).find("ul").first()
+        RenderData(arrOfElements, element);
+    };
+
 };
 })(jQuery);

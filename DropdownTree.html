@@ -18,6 +18,7 @@ Dropdown Tree
 
 <div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
 <div class="dropdown dropdown-tree" id="firstDropDownTree2"></div>
+<div class="dropdown dropdown-tree" id="firstDropDownTree3"></div>
 
 
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
@@ -112,6 +113,25 @@ var options2 = {
 
 
 $("#firstDropDownTree2").DropDownTree(options2);
+
+
+var options3 = {
+	title : "DropDown Tree 3",
+	data: arr3,
+	maxHeight: 300,
+	expandHandler: function(element, expanded){
+		if(expanded){
+			$("#firstDropDownTree3").AddChildren(element, arr3);
+		}
+	},
+	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	selectChildren: true,
+	multiSelect: true,
+}
+
+
+$("#firstDropDownTree3").DropDownTree(options3);
 
 </script>
 

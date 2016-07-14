@@ -64,6 +64,7 @@ DataAttrs is an array of objects
 - `GetParents()` returns an `array` of the full tree of the clicked element down to up
 - `SetTitle(title)` sets the title of the dropdown button
 - `GetSelected()` if multiselect is `true`, will return an array of the selected elements
+- `AddChildren(element, childrenArray)` adds the array of children to the send element in the attribute, the `childrenArray` must be the same as the Array sent in the `data` attribute
 
 
 #CDNs:
