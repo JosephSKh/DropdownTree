@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>
+Dropdown Tree
+</title>
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+<link rel="stylesheet" href="dropdowntree.css">
+
+</head>
+<body>
+
+	<a href="https://github.com/JosephSKh" target="_blank"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/38ef81f8aca64bb9a64448d0d70f1308ef5341ab/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png"></a>
+
+
+<h3>Basic Example:</h3><div class="dropdown dropdown-tree" id="firstDropDownTree2"></div>
+<h3>Children Select:</h3><div class="dropdown dropdown-tree" id="firstDropDownTree"></div>
+<h3>Add Children:</h3><div class="dropdown dropdown-tree" id="firstDropDownTree3"></div>
+
+
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script src="dropdowntree.js"></script>
+
+
+<script>
+
+/////////////////////////// normal user code
+
+var arr4=[
+{title:"afafas",href:"#1",dataAttrs:[{title:"dataattr1",data:"value1"},{title:"dataattr2",data:"value2"},{title:"dataattr3",data:"value3"}]}
+,
+{title:"kjkjholkj222",href:"#2",dataAttrs:[{title:"dataattr4",data:"value4"},{title:"dataattr5",data:"value5"},{title:"dataattr6",data:"value6"}]}
+,
+{title:"nkjhj333",href:"#3",dataAttrs:[{title:"dataattr7",data:"value7"},{title:"dataattr8",data:"value8"},{title:"dataattr9",data:"value9"}]}
+];
+
+var arr3=[
+{title:"afafas",href:"#1",dataAttrs:[{title:"dataattr1",data:"value1"},{title:"dataattr2",data:"value2"},{title:"dataattr3",data:"value3"}]}
+,
+{title:"kjkjholkj222",href:"#2",dataAttrs:[{title:"dataattr4",data:"value4"},{title:"dataattr5",data:"value5"},{title:"dataattr6",data:"value6"}],data:arr4}
+,
+{title:"nkjhj333",href:"#3",dataAttrs:[{title:"dataattr7",data:"value7"},{title:"dataattr8",data:"value8"},{title:"dataattr9",data:"value9"}]}
+];
+
+var arr2=[
+{title:1324,href:"#1",dataAttrs:[{title:"dataattr1",data:"value1"},{title:"dataattr2",data:"value2"},{title:"dataattr3",data:"value3"}] ,data:arr3}
+,
+{title:245345,href:"#2",dataAttrs:[{title:"dataattr4",data:"value4"},{title:"dataattr5",data:"value5"},{title:"dataattr6",data:"value6"}]}
+,
+{title:3345345,href:"#3",dataAttrs:[{title:"dataattr7",data:"value7"},{title:"dataattr8",data:"value8"},{title:"dataattr9",data:"value9"}]}
+];
+
+
+
+var arr=[
+{title:1,href:"#1",dataAttrs:[{title:"dataattr1",data:"value1"},{title:"dataattr2",data:"value2"},{title:"dataattr3",data:"value3"}], data: arr2}
+,
+{title:2,href:"#2",dataAttrs:[{title:"dataattr4",data:"value4"},{title:"dataattr5",data:"value5"},{title:"dataattr6",data:"value6"}]}
+,
+{title:3,href:"#3",dataAttrs:[{title:"dataattr7",data:"value7"},{title:"dataattr8",data:"value8"},{title:"dataattr9",data:"value9"}],data:arr3}
+];
+
+var options = {
+	title : "DropDown Tree",
+	data: arr,
+	maxHeight: 300,
+	clickHandler: function(element){
+		//gets clicked element parents
+		console.log($(element).GetParents());
+		//element is the clicked element
+		console.log(element);
+		$("#firstDropDownTree").SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$("#firstDropDownTree").GetSelected());
+	},
+	expandHandler: function(element,expanded){
+		console.log("expand",element,expanded);
+	},
+	checkHandler: function(element,checked){
+		console.log("check",element,checked);
+	},
+	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	multiSelect: true,
+	selectChildren: true,
+}
+
+$("#firstDropDownTree").DropDownTree(options);
+
+
+
+
+var options2 = {
+	title : "DropDown Tree 2",
+	data: arr3,
+	maxHeight: 3000,
+	clickHandler: function(element){
+				//gets clicked element parents
+		console.log($(element).GetParents());
+		//element is the clicked element
+		console.log(element);
+		$("#firstDropDownTree2").SetTitle($(element).find("a").first().text());
+		console.log("Selected Elements",$("#firstDropDownTree2").GetSelected());
+	},
+	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	multiSelect: true,
+}
+
+
+$("#firstDropDownTree2").DropDownTree(options2);
+
+
+var options3 = {
+	title : "DropDown Tree 3",
+	data: arr3,
+	maxHeight: 300,
+	expandHandler: function(element, expanded){
+		if(expanded){
+			$("#firstDropDownTree3").AddChildren(element, arr3);
+		}
+	},
+	closedArrow: '<i class="fa fa-caret-right" aria-hidden="true"></i>',
+	openedArrow: '<i class="fa fa-caret-down" aria-hidden="true"></i>',
+	selectChildren: true,
+	multiSelect: true,
+}
+
+
+$("#firstDropDownTree3").DropDownTree(options3);
+
+</script>
+
+</body>
+</html>

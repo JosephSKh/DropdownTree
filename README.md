@@ -9,7 +9,7 @@ Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquery with clic
 # Getting Started:
 ##### Include JQuery, Bootstrap and FontAwesome
 Download the `dropdowntree.js` and `dropdowntree.css`
-##### please refer to `DropdownTree.html` for full example
+##### please refer to `index.html` for full example
 create a div with the class `dropdown-tree`
 
 ex:
