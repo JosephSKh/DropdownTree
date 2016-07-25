@@ -6,6 +6,7 @@ var dropDownOptions = {
     maxHeight : 300,
     multiSelect : false,
     selectChildren : false,
+    addChildren: false,
     clickHandler : function(target){},
     expandHandler : function(target,expanded){},
     checkHandler : function(target,checked){},
@@ -33,7 +34,9 @@ var globalTreeIdCounter=0;
                     $("#TreeElement"+globalTreeIdCounter).append("<ul style='display:none'></ul>");
                     $("#TreeElement"+globalTreeIdCounter).find("a").first().prepend('<span class="arrow">'+options.closedArrow+'</span>');
                     RenderData(data[i].data, $("#TreeElement"+globalTreeIdCounter).find("ul").first());
-                 }
+                 }else if(options.addChildren){
+                    $("#TreeElement"+globalTreeIdCounter).find("a").first().prepend('<span class="arrow">'+options.closedArrow+'</span>');
+                }
             }
             else{
                 element.find("ul").append('<li id="TreeElement'+globalTreeIdCounter+'"'+dataAttrs+'>'+(options.multiSelect?'<i class="fa fa-square-o select-box" aria-hidden="true"></i>':'')+'<a href="'+((typeof data[i].href != "undefined" && data[i].href!=null)?data[i].href:'#')+'">'+data[i].title+'</a></li>');
@@ -41,6 +44,8 @@ var globalTreeIdCounter=0;
                     $("#TreeElement"+globalTreeIdCounter).append("<ul style='display:none'></ul>");
                     $("#TreeElement"+globalTreeIdCounter).find("a").first().prepend('<span class="arrow">'+options.closedArrow+'</span>');
                     RenderData(data[i].data, $("#TreeElement"+globalTreeIdCounter).find("ul").first());
+                }else if(options.addChildren){
+                    $("#TreeElement"+globalTreeIdCounter).find("a").first().prepend('<span class="arrow">'+options.closedArrow+'</span>');
                 }
             }
         }
@@ -136,8 +141,11 @@ var globalTreeIdCounter=0;
     };
 
     $(options.element).init.prototype.AddChildren = function(element, arrOfElements){
-        element = $(element).find("ul").first()
-        RenderData(arrOfElements, element);
+        if(options.addChildren && $(element).find("ul").length == 0)
+            $(element).append("<ul></ul>");
+        element = $(element).find("ul").first();
+        if(element.find("li").length==0)
+            RenderData(arrOfElements, element);
     };
 
 };

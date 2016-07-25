@@ -45,6 +45,7 @@ Call:
 - `openedArrow` if a `li` has a sub menu this will be the icon of the opened arrow when opened .. defaults `<i class="fa fa-caret-down" aria-hidden="true"></i>`
 - `multiSelect` `bool` adds checkboxes and allows multi selection for multi elements in the dropdown
 - `selectChildren` `bool` will check all children of the selected parent .. defaults to `false`
+- `addChildren` `bool` will tell the plugin if that the children are dynamic .. defaults to `false` .. set to `true` if you will use `AddChildren()`
 
 
 ##Arr Description:
