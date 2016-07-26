@@ -1,5 +1,5 @@
-.dropdown-tree > ul{overflow-y: auto;overflow-x: hidden;white-space: nowrap; padding-left: 10px;}
-.dropdown-tree li{list-style: none}
+.dropdown-tree > ul{overflow-y: auto;overflow-x: hidden;white-space: nowrap;}
+.dropdown-tree li{list-style: none; padding-left: 10px;}
 .dropdown-tree li:hover{ background: #eee;}
 .dropdown-tree li:hover ul { background: white; }
 .dropdown-tree li:hover ul li:hover { background: #eee; } 
