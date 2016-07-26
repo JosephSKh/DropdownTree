@@ -1,4 +1,4 @@
-.dropdown-tree > ul{overflow-y: auto;overflow-x: hidden;white-space: nowrap;}
+.dropdown-tree > ul{overflow-y: auto;overflow-x: hidden;white-space: nowrap; padding-left: 10px;}
 .dropdown-tree li{list-style: none}
 .dropdown-tree li:hover{ background: #eee;}
 .dropdown-tree li:hover ul { background: white; }
