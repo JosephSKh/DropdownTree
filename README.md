@@ -15,10 +15,13 @@ create a div with the class `dropdown-tree`
 
 ex:
 
-`<div class="dropdown dropdown-tree" id="firstDropDownTree">`
+```html
+<div class="dropdown dropdown-tree" id="firstDropDownTree">
+```
 
 Call:
 
+```javascript
     var arr=[
     {title:1,dataAttrs:[{title:"dataattr1",data:"value1"},{title:"dataattr2",data:"value2"},{title:"dataattr3",data:"value3"}]},
     {title:2,dataAttrs:[{title:"dataattr4",data:"value4"},{title:"dataattr5",data:"value5"},{title:"dataattr6",data:"value6"}]},
@@ -34,7 +37,8 @@ Call:
     }
 
     $("#firstDropDownTree").DropDownTree(options);
-    
+```
+
 ##Options Description:
 - `title` is the text of the dropdown
 - `data` is the array of values will be passed to the `ul li`
@@ -72,12 +76,20 @@ DataAttrs is an array of objects
 #CDNs:
 ##CSS:
 ###Bootstrap:
-    `<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">`
+```html
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+```
 ###FontAwesome:
-`<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">`
+```html
+   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+```
 
 ##JS:
 ###JQuery:
-`<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>`
+```html
+<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
+```
 ###Bootstrap
-`<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>`
+```html
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+```
