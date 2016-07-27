@@ -10,6 +10,7 @@ var dropDownOptions = {
     clickHandler : function(target){},
     expandHandler : function(target,expanded){},
     checkHandler : function(target,checked){},
+    rtl: false,
 };
 
 var globalTreeIdCounter=0;
@@ -115,11 +116,17 @@ var globalTreeIdCounter=0;
         options.checkHandler($(this).parents("li").first(),checked);
     });
 
-        $(options.element).append('<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="dropdowntree-name">'+options.title+'</span><span class="caret"></span></button>');
-        $(options.element).append('<ul style="max-height: '+options.maxHeight+'px" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>');
+    if(options.rtl){
+        $(options.element).addClass("rtl-dropdown-tree");
+        if(options.closedArrow.indexOf("fa-caret-right")>-1){
+            options.closedArrow = options.closedArrow.replace("fa-caret-right","fa-caret-left");
+        } 
+    }
+    $(options.element).append('<button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"><span class="dropdowntree-name">'+options.title+'</span><span class="caret"></span></button>');
+    $(options.element).append('<ul style="max-height: '+options.maxHeight+'px" class="dropdown-menu" aria-labelledby="dropdownMenu1"></ul>');
 
-        RenderData(options.data,$(options.element).find("ul").first());
-    
+    RenderData(options.data,$(options.element).find("ul").first());
+
 
 
     //protos inits
