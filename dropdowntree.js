@@ -89,7 +89,7 @@ var globalTreeIdCounter=0;
     //element click handler
     $(options.element).on("click","li",function(e){
     	tree.init.prototype.clickedElement = $(this);
-    	options.clickHandler(tree.clickedElement);
+    	options.clickHandler(tree.clickedElement, e);
         e.stopPropagation();
     });
 
@@ -107,7 +107,7 @@ var globalTreeIdCounter=0;
             $(this).prepend(options.openedArrow);
             $(this).parents("li").first().find("ul").first().show();
         }
-        options.expandHandler($(this).parents("li").first(),expanded);
+        options.expandHandler($(this).parents("li").first(), e, expanded);
     });
 
 
@@ -138,7 +138,7 @@ var globalTreeIdCounter=0;
                 });
             }
         }
-        options.checkHandler($(this).parents("li").first(),checked);
+        options.checkHandler($(this).parents("li").first(), e, checked);
     });
 
     if(options.rtl){
