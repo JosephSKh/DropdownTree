@@ -1,4 +1,4 @@
-#***STILL UNDER CONSTRUCTION***
+# ***STILL UNDER CONSTRUCTION***
 # DropdownTree
 Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquery with click handlers, data handlers. With single and multi item select and ajax request for getting data
 
@@ -38,7 +38,7 @@ var options = {
 $("#firstDropDownTree").DropDownTree(options);
 ```
 
-##Options Description:
+## Options Description:
 - `title` is the text of the dropdown
 - `data` is the array of values will be passed to the `ul li`
 - `clickHandler` is a function which will be passed and handle an element click, pass a `element` variable and this will return the clicked element
@@ -53,43 +53,47 @@ $("#firstDropDownTree").DropDownTree(options);
 - `rtl` `bool` will tell the plugin if the page is RTL .. defaults to `false` .. you need to add rtl-bootstrap as well
 
 
-##Arr Description:
+## Arr Description:
 - `title` is the text of the element
 - `dataAttrs` an array of object which will add data attributes for each `li` element
 - `data` is an another arraay of sub elements with the same attributes
 - `href` is the HREF of the `a` element inside the `li` current element
 
 
-##DataAttrs Description:
+## DataAttrs Description:
 DataAttrs is an array of objects
 - `title` is the title of the data attribute .. if it's "xx" ,, then the data attribute will be `data-xx`
 - `data` is the data attribute value
 
 
-##Functions:
+## Functions:
 - `GetParents()` returns an `array` of the full tree of the clicked element down to up
 - `SetTitle(title)` sets the title of the dropdown button
 - `GetSelected()` if multiselect is `true`, will return an array of the selected elements
 - `AddChildren(element, childrenArray)` adds the array of children to the send element in the attribute, the `childrenArray` must be the same as the Array sent in the `data` attribute
 
 
-#CDNs:
-##CSS:
-###Bootstrap:
+# CDNs:
+
+## CSS:
+
+### Bootstrap:
 ```html
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 ```
-###FontAwesome:
+### FontAwesome:
 ```html
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
 ```
 
-##JS:
-###JQuery:
+## JS:
+
+### JQuery:
+
 ```html
 <script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>
 ```
-###Bootstrap
+### Bootstrap
 ```html
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
 ```
