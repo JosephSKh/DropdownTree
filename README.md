@@ -1,4 +1,7 @@
 # DropdownTree
+
+<a href="https://www.buymeacoffee.com/jorjojo" target="_blank"><img alt="buy me a coffee" width="100%" height="50px" style="max-width: 100%;" src="https://img.buymeacoffee.com/button-api/?text=Buy me a coffee&amp;emoji=&amp;slug=jorjojo&amp;button_colour=BD5FFF&amp;font_colour=ffffff&amp;font_family=Lato&amp;outline_colour=000000&amp;coffee_colour=FFDD00"></a>
+
 Dropdown Tree is a dynamic dropdown menu based on bootstrap and jquery with click handlers, data handlers. With single and multi item select and ajax request for getting data
 
 ### [DEMO](https://JosephSKh.github.io/repos/dropdowntree)
